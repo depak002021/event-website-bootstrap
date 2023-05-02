@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="Advancements in Artificial Intelligence and Data science for Industry 5.0 ,Advancements in Intelligent Technologies in Smart Electronics ,Advancements in Aerospace and Robotic Technologies ,Advanced Materials and Computational Mathematics ," name="keywords">
+  <title>ICONSTEM-INTERNATIONAL CONFERENCE ON SCIENCE TECHNOLOGY ENGINEERING AND MANAGEMENT</title>
+  <meta content="ICONSTEM-INTERNATIONAL CONFERENCE ON SCIENCE, TECHNOLOGY, ENGINEERING AND MANAGEMENT,SMART SYSTEMS AND INNOVATIVE TECHNOLOGY FOR INDUSTRY 5.0,6th & 7th April, 2023,Organised by Jeppiaar Engineering College" name="description">
+
+   <!-- Favicons -->
+  <link href="assets/img/iconstemlogo 23.png" rel="icon">
+  <link href="assets/img/iconstemlogo 23.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!--  Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+<style>
+    :root {
+    font-family: "Roboto", sans-serif;
+    background-color: #ededed;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.card {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    border-radius: 2px;
+    background-color: #fefefe;
+    height: 88px;
+    max-width: 350px;
+    overflow: visible;
+    transition: 375ms cubic-bezier(0.4, 0.0, 0.2, 1);
+    
+    /* to position in middle */  
+    margin: auto;
+    position: absolute;
+    top: 20px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+
+.cardActive {
+    height: 620px;
+}
+
+.cardActive .nonSharedContent {
+    /* When closing, wait 75ms before fading and fade for longer */
+    transition: 150ms;
+    transition-delay: 75ms;
+    margin-top:5px;
+    opacity: 1;
+}
+
+.nonSharedContent {
+    transition: 75ms;
+    opacity: 0;
+}
+
+.cardHeader {
+    cursor: pointer;
+    width: 100%;
+    height: 83px;
+    padding-top: 16px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.cardHeaderTextContainer {
+    display: inline-block;
+    height: 100%;
+    padding-top: 4px;
+    width: auto;
+}
+
+.cardHeaderTitle {
+    width: 200px;
+    height: 16px;
+    margin-bottom: 16px;
+}
+
+.cardHeaderSupportingText {
+    height: 16px;
+    width: 136px;
+}
+
+.cardAvatarContainer {
+    display: inline-block;
+    margin: 0 16px;
+    height: 100%;
+    float: left;
+    font-family:cursive;
+    font-weight:400px;
+}
+
+.cardAvatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: #2196f2;
+    display: inline-block;
+}
+
+
+
+.greyLine {
+    width: 350px;
+    height: 22px;
+    margin: 24px 16px;
+    background-color: none;
+}
+
+.greyLine:first-of-type {
+    width: 350px;
+    margin: 0 16px;
+}
+.panda {
+  text-align: center;
+  position: relative;
+  margin: 100px auto;
+  background-color:#ededed;
+}
+h2 {
+  font-family: arial;
+  color: #333;
+  font-size: 40px;
+  text-align: center;
+  margin: 0 30px;
+  text-transform: uppercase;
+}
+.top {
+  width: 70px;
+  top: 20px;
+   display: inline-block;
+  position: absolute;
+  background: #faa;
+  height: 3px;
+  left: 50%;
+}
+.bottom {
+  width: 120px;
+  top: 35px;
+   display: inline-block;
+  position: absolute;
+  background: #faa;
+  height: 3px;
+  left: 50%;
+}
+.left {
+  transform: translateX(-150px);
+   display: inline-block;
+  position: absolute;
+  background: #faa;
+  height: 3px;
+  left: 50%;
+}
+.bottom.left {
+  transform: translateX(-200px);
+}
+.right {
+  transform: translateX(80px);
+   display: inline-block;
+  position: absolute;
+  background: #faa;
+  height: 3px;
+  left: 50%;
+}
+      /*loader*/
+.jumper { 
+    position : fixed;
+    top : 0px;
+    left : 0px;
+    width : 100%;
+    height : 100%;
+    min-width: 80px;
+    min-height: 80px;
+     background-color: cyan; 
+    display: flex;
+    z-index:99999;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+.rect { 
+    position : absolute;
+    width : 100px;
+    height : 100px;
+    border : 2px solid white;
+    border-radius: 50%;
+    transform :rotate(calc(var(--i) * 105deg)) scale(0);
+    animation: scale 1s ease-in-out calc(var(--i) * 0.5s) infinite alternate;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+@keyframes scale {
+    from { 
+        transform : scale(0) rotate(calc(var(--i) * 35deg));
+    }to {
+        transform: scale(1) rotate(calc(var(--i) * 35deg));;
+    }
+}
+
+</style>
+  <body>
+      
+        <!--loader dood-->
+    <div class="depak1">
+      <div class="jumper">
+        <img class="rect" style = '--i : 1; background-color : ;width:100px; height:100px;' src="assets/img/iconstemlogo 23.png">
+        <img  style = '--i : 1; background-color : ;width:100px; height:100px;' class="rect" src="assets/img/iconstemlogo 23.png">
+        <img  style = '--i : 2; background-color : ;width:100px; height:100px;' class="rect" src="assets/img/iconstemlogo 23.png">
+        <img  style = '--i : 3; background-color : ;width:100px; height:100px;' class="rect" src="assets/img/iconstemlogo 23.png">
+        <img  style = '--i : 4; background-color : ;width:100px; height:100px;' class="rect" src="assets/img/iconstemlogo 23.png">
+        <img  style = '--i : 5; background-color : ;width:100px; height:100px;' class="rect" src="assets/img/iconstemlogo 23.png">
+        <img  style = '--i : 6; background-color :;width:100px; height:100px;' class="rect" src="assets/img/iconstemlogo 23.png">
+        <img  style = '--i : 7; background-color : ;width:100px; height:100px;' class="rect" src="assets/img/iconstemlogo 23.png">
+        <img  style = '--i : 8; background-color : ;width:100px; height:100px;' class="rect" src="assets/img/iconstemlogo 23.png">
+       
+        </div>
+        </div>
+    <!--loader dood-->
+      <!-- ======= Header ======= -->
+  <header id="header" class="d-flex align-items-center  ">
+    <div class="container-fluid container-xxl d-flex align-items-center">
+
+      <div id="logo" class="me-auto">
+        <!-- Uncomment below if you prefer to use a text logo -->
+         <h1 class="text-dark"><a href="index.html" class="scrollto text-dark">ICONSTEM <span>2023</span></a></h1>
+        
+      </div>
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link scrollto text-dark active" href="https://iconstem.dashingknights.com/">Home</a></li>
+          <li><a class="nav-link scrollto text-dark" href="index.html#about">About</a></li>
+          <li><a class="nav-link scrollto text-dark" href="index.html#speakers">Speakers</a></li>
+           <li class="dropdown text-dark"><a href="#"><span class="text-dark">Event</span> <i class="bi bi-chevron-down"></i></a>
+          <ul>
+            <li><a class="text-dark" href="index.html#schedule ">Event Schedule</a></li>
+            <li><a class="text-dark" href="callfor.html">Call for papers</a></li>
+            <li><a class="text-dark" href="#">Committee</a></li>
+            </ul>
+        </li>
+          <!--<li><a class="nav-link scrollto" href="#schedule">Event</a></li>-->
+          <li><a class="nav-link scrollto text-dark" href="index.html#venue">Venue</a></li>
+          <li><a class="nav-link scrollto text-dark" href="index.html#gallery">Gallery</a></li>
+          <li><a class="nav-link scrollto text-dark" href="index.html#supporters">Sponsor</a></li>
+        
+            
+             <!-- <li class="dropdown"><a href="#"><span>Event</span> <i class="bi bi-chevron-right"></i></a>
+              <ul>
+               
+                <li><a href="#">Committee</a></li>
+              <li><a href="#">Deep Drop Down 3</a></li>
+                <li><a href="#">Deep Drop Down 4</a></li>
+                <li><a href="#">Deep Drop Down 5</a></li>-->
+              
+           
+          <li><a class="nav-link scrollto text-dark" href="inedx.html#contact">Contact</a></li>
+          <li><a class="nav-link buy-tickets scrollto text-dark-500" href="index.html#buy-tickets">Template download</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+      <a class="buy-tickets scrollto text-white" href="register.html">Register</a>
+    </div>
+  </header><!-- End Header -->
+  <!--carouse dood-->
+  <div class="panda">
+  <div class="top right"></div>
+  <div class="top left"></div>
+  <h2> Topics </h2>
+  <div class="bottom right"></div>
+  <div class="bottom left"></div>
+</div>
+  <!--carouse dood-->
+  <!--deepsea1 start-->
+      <div class="card">
+    <section class="cardHeader">
+        <span class="cardAvatarContainer">
+            TRACK 1: Advancements in Artificial Intelligence and Data science for Industry 5.0 (AAIDSI 2023)
+        </span>
+        <span class="cardHeaderTextContainer">
+            <div class="cardHeaderTitle"> </div>
+            <div class="cardHeaderSupportingText">
+               
+            </div>
+            </span>
+    </section>
+    <section class="nonSharedContent">
+  
+        <div class="greyLine">(i) AI Algorithms</div>
+        <div class="greyLine">(ii) Aritificial Intelligence tools & Applications</div>
+        <div class="greyLine">(iii) IOT</div>
+        <div class="greyLine">(iv) Data Mining and Machine Learning Tools</div>
+        <div class="greyLine">(v) Heuristtic and AI Planning Strategies and Tools</div>
+        <div class="greyLine">(vi) Hybrid Intelligent Systems</div>
+        <div class="greyLine">(vii) infromation Retrieval</div>
+        <div class="greyLine">(viii) Intelligent System Architectures</div>
+        <div class="greyLine">(ix) Persasive Computing and Ambient Intelligence</div>
+        <div class="greyLine">(x) Robotics</div>
+        <div class="greyLine">(xi) Web Intelligence Applications</div>
+        <div class="greyLine">(xii) Recent Trends and Developments</div>
+    </section>
+   
+    <!--deepsea2-->
+    
+    <section class="cardHeader" style="box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;">
+        <span class="cardAvatarContainer">
+            TRACK 2: Advancements in Intelligent Technologies in Smart Electronics (AITSE)
+        </span>
+        <span class="cardHeaderTextContainer">
+            <div class="cardHeaderTitle"> </div>
+            <div class="cardHeaderSupportingText">
+               
+            </div>
+            </span>
+    </section>
+    <section class="nonSharedContent" style="box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;">
+  
+        <div class="greyLine">(i) Electronic Design Automation</div>
+        <div class="greyLine">(ii) Intelligent Industrial Controllers</div>
+        <div class="greyLine">(iii) Green Comminucation</div>
+        <div class="greyLine">(iv) Deep learning</div>
+        <div class="greyLine">(v) Spectrum Efficient Management Sensing and Cognitive Radio</div>
+        <div class="greyLine">(vi) Biometrics Industrial Electronics</div>
+        <div class="greyLine">(vii) Healthcare Information Systems</div>
+        <div class="greyLine">(viii) Body Area N/W</div>
+        <div class="greyLine">(ix) 6G</div>
+        <div class="greyLine">(x) Image & Signal Processing</div>
+        <div class="greyLine">(xi) Neural Networks</div>
+    </section>
+    <!--three-->
+      <!--deepsea2-->
+    
+    <section class="cardHeader" style="box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;">
+        <span class="cardAvatarContainer">
+            TRACK 3: Advancements in Aerospace and Robotic Technologies (AART)
+        </span>
+        <span class="cardHeaderTextContainer">
+            <div class="cardHeaderTitle"> </div>
+            <div class="cardHeaderSupportingText">
+               
+            </div>
+            </span>
+    </section>
+    <section class="nonSharedContent" style="box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;">
+  
+        <div class="greyLine">(i) Advance Materials</div>
+        <div class="greyLine">(ii) Smart Automation & Blockchain</div>
+        <div class="greyLine">(iii) Autonomous Vehicles</div>
+        <div class="greyLine">(iv) Utilizing Internet Of Things To Aniticipate Maintainance Issues</div>
+        <div class="greyLine">(v) Addictive Manufacturing</div>
+        <div class="greyLine">(vi) Artificial Intelligence</div>
+        <div class="greyLine">(vii) Robotics & Automation</div>
+        <div class="greyLine">(viii) Air Conditioning And Refigeration</div>
+        <div class="greyLine">(ix) IC Engine & Alternate Fuels</div>
+    </section>
+    <!--four-->
+      <!--deepsea2-->
+    
+    <section class="cardHeader" style="box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;">
+        <span class="cardAvatarContainer">
+            TRACK 4: Innovative Advancements in Modern Biotechnology (IAMB)
+        </span>
+        <span class="cardHeaderTextContainer">
+            <div class="cardHeaderTitle"> </div>
+            <div class="cardHeaderSupportingText">
+               
+            </div>
+            </span>
+    </section>
+    <section class="nonSharedContent" style="box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;">
+ 
+        <div class="greyLine">(i) Animal Biotechnology</div>
+        <div class="greyLine">(ii) Plant Biotechnology</div>
+        <div class="greyLine">(iii) Food Biotechnology</div>
+        <div class="greyLine">(iv) Bioinformatics</div>
+        <div class="greyLine">(v) Advanced Stem Cell Technology</div>
+        <div class="greyLine">(vi) Advacned Genomics And Proteomics</div>
+        <div class="greyLine">(vii) Life Style Diseases</div>
+        <div class="greyLine">(viii) Cancer Therepeutics</div>
+    </section>
+    <!--five-->
+      <!--deepsea2-->
+    
+    <section class="cardHeader" style="box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;">
+        <span class="cardAvatarContainer">
+            TRACK 5: Innovative Business Strategies in Management (IBSM)
+        </span>
+        <span class="cardHeaderTextContainer">
+            <div class="cardHeaderTitle"> </div>
+            <div class="cardHeaderSupportingText">
+               
+            </div>
+            </span>
+    </section>
+    <section class="nonSharedContent" style="box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;">
+  
+        <div class="greyLine">(i) Marketing Management</div>
+        <div class="greyLine">(ii) Human Resource Management</div>
+        <div class="greyLine">(iii) Banking & Financial Management</div>
+        <div class="greyLine">(iv) Operations & Systems Management</div>
+        <div class="greyLine">(v) Logistics & Supply Chain Management</div>
+        <div class="greyLine">(vi) Entreprenuership Development</div>
+        <div class="greyLine">(vii) Business Analytics</div>
+    </section>
+    <!--six-->
+      <!--deepsea2-->
+    
+    <section class="cardHeader" style="box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;">
+        <span class="cardAvatarContainer">
+            TRACK 6: Advanced Materials and Computational Mathematics (AMCM)
+        </span>
+        <span class="cardHeaderTextContainer">
+            <div class="cardHeaderTitle"> </div>
+            <div class="cardHeaderSupportingText">
+               
+            </div>
+            </span>
+    </section>
+    <section class="nonSharedContent" style="box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;">
+        <div class="greyLine">(i) Chemical Innovation:A New Era Of Growth</div>
+        <div class="greyLine">(ii) Sustainability O fTechnology During And Post Pandemic</div>
+        <div class="greyLine">(iii) Trace Metals in the Environment</div>
+        <div class="greyLine">(iv) Functionals Composite Materials: Techology And Appication</div>
+        <div class="greyLine">(v) Computational Mathematics</div>
+        <div class="greyLine">(vi) Nano Materials</div>
+        <div class="greyLine">(vii) Smart Materials And Superconductors</div>
+        <div class="greyLine">(viii) Thin film, solar and photo voltaic cells</div>
+        <div class="greyLine">(ix) Crystallography</div>
+    </section>
+    </div>
+<!--deepasea1 end-->
+ <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+
+  <!--  Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script>
+    setTimeout(function(){
+        $('.jumper').fadeToggle();
+    },5000);
+</script>
+<script>
+    // Initialize
+const allCardsHeaders = document.getElementsByClassName("cardHeader");
+for(header of allCardsHeaders) {
+    header.addEventListener("click", clickCard);
+}
+
+function clickCard(e) {
+    this.parentElement.classList.toggle('cardActive');
+}
+</script>
+      
+  </body>
+  </html>
